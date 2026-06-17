@@ -3,12 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Redirecionando...</title>
-<script>
-window.location.replace("https://pmrun.com.br/");
-</script>
 </head>
 <body>
-<p>Redirecionando...</p>
+<script>
+fetch('config.json?' + Date.now())
+.then(r => r.json())
+.then(data => {
+  window.location.replace(data.url);
+});
+</script>
 </body>
-</html>
 </html>
