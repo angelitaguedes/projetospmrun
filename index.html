@@ -2,10 +2,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=https://pmrun.com.br/">
 <title>Redirecionando...</title>
 </head>
 <body>
-<p>Redirecionando...</p>
+<script>
+fetch('config.json?' + Date.now())
+.then(r => r.json())
+.then(data => {
+  window.location.replace(data.url);
+});
+</script>
 </body>
 </html>
